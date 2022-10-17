@@ -17,7 +17,7 @@ const getPost = async (event) => {
             Key: marshall({ postId: event.pathParameters.postId }),
         };
         const { Item } = await db.send(new GetItemCommand(params));
-
+        console.log("Hi Mom!");
         console.log({ Item });
         response.body = JSON.stringify({
             message: "Successfully retrieved post.",
